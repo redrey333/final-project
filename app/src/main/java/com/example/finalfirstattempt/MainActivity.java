@@ -69,6 +69,7 @@ public class MainActivity extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Toast.makeText(MainActivity.this, "Login Complete", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(MainActivity.this, dashActivity.class);
+                    intent.setPackage("com.android.vending");
                     startActivity(intent);
                     finish();
                 }

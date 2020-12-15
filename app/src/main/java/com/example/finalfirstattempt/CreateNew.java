@@ -31,7 +31,7 @@ public class CreateNew extends AppCompatActivity {
         setContentView(R.layout.createnew);
         fireBaseAuth= FirebaseAuth.getInstance();
         emailEt = findViewById(R.id.email);
-        passwordEt1 = findViewById(R.id.password);
+        passwordEt1 = findViewById(R.id.password1);
         passwordEt2 = findViewById(R.id.password2);
         createNewButton = findViewById(R.id.register);
         progDia = new ProgressDialog(this);
@@ -90,6 +90,7 @@ public class CreateNew extends AppCompatActivity {
                 if(task.isSuccessful()){
                     Toast.makeText(CreateNew.this, "Register Complete", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(CreateNew.this, dashActivity.class);
+                    intent.setPackage("com.android.vending");
                     startActivity(intent);
                     finish();
                 }
